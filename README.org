@@ -1,5 +1,6 @@
+#+OPTIONS: toc:nil
 * jsprojects
-This is a repository where I will put various code written in JS. Out of other languages that I have tried that aren't python (the primary programming language I use). JS seems to be the only one I can see myself using. I feel concepts and stuff I learned in python help me understand JS.
+This is a repository where I will put various code written in JS. Out of other languages that I have tried that aren't python (the primary programming language I use these days). JS seems to be the only one I can see myself using. I feel concepts and stuff I learned in python help me understand JS.
 
 * Projects
 ** Tutorial
