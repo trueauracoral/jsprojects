@@ -23,9 +23,14 @@ function getPokemon(e) {
 		.then((data3) => {
 			if (0 in data3.chain.evolves_to){
 				evolvetext = capitalizeFirstLetter(name)+" evolves to "+capitalizeFirstLetter(data3.chain.evolves_to[0].species.name);
-			}else{
-				evolvetext = capitalizeFirstLetter(name)+" does not evolve.";
-				console.log(evolvetext);
+				if (data3.chain.evolves_to[0].species.name == name){
+					evolvetext = capitalizeFirstLetter(name)+" evolves to "+capitalizeFirstLetter(data3.chain.evolves_to[0].evolves_to[0].species.name);
+				}else if (data3.chain.evolves_to[0].evolves_to[0].species.name == name){
+					evolvetext = capitalizeFirstLetter(name)+" is the final form of "+capitalizeFirstLetter(data3.chain.species.name);
+				}
+			}
+			else{
+				evolvetext = capitalizeFirstLetter(name)+" does not evolve";
 			}
 		document.querySelector(".pokemonBox").innerHTML = `
 		<div>
