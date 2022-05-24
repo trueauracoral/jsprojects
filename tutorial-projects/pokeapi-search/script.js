@@ -1,7 +1,8 @@
+//Tutorial project created with help from  https://invidio.xamh.de/watch?v=zOrejGF0oBA
 document.querySelector('#search').addEventListener("click",getPokemon);
 
 function capitalizeFirstLetter(string){
-    return string.charAt(0).toUpperCase() + string.slice(1)
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 function getPokemon(e) {
     const name = document.querySelector("#pokemonName").value.toLowerCase();
@@ -9,25 +10,43 @@ function getPokemon(e) {
 	fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
 	.then((response) => response.json())
 	.then((data) => {
-		console.log(data.weight);
-		console.log(data.name);
-		console.log(data.sprites.other["official-artwork"].front_default);
+		typetext = capitalizeFirstLetter(data.types[0].type.name);
+		if (1 in data.types) {
+			typetext = typetext+", "+capitalizeFirstLetter(data.types[1].type.name);
+		}
+		fetch(`https://pokeapi.co/api/v2/pokemon-species/${name}`)
+		.then((response) => response.json())
+		.then((data2) => {
+			evolution_chain_link = data2.evolution_chain.url;
+		fetch(evolution_chain_link)
+		.then((response) => response.json())
+		.then((data3) => {
+			if (0 in data3.chain.evolves_to){
+				evolvetext = capitalizeFirstLetter(name)+" evolves to "+capitalizeFirstLetter(data3.chain.evolves_to[0].species.name);
+			}else{
+				evolvetext = capitalizeFirstLetter(name)+" does not evolve.";
+				console.log(evolvetext);
+			}
 		document.querySelector(".pokemonBox").innerHTML = `
 		<div>
 		<img src="${data.sprites.other["official-artwork"].front_default}" alt="${data.name}"/>
 		</div>
 		<div class="pokemonInfo">
 			<h1>${capitalizeFirstLetter(data.name)}</h1>
-			<p>Weight: ${data.weight}</p>
+			<p><b>Type:</b> ${typetext}</p>
+			<p><b>Weight:</b> ${data.weight}</p>
+			<p><b>Height:</b> ${data.height}</p>
+			<p>${evolvetext}</p>
 		</div>
 		`;
-	})
-	.catch((err) => {
-		document.querySelector(".pokemonBox").innerHTML = `
-<div>
-<p>Could not find this Pokemon 😟. Try again.</p>
-</div>`
-	    console.log("Pokemon not found",err);
+	//.catch((err) => {
+	//	document.querySelector(".pokemonBox").innerHTML = `
+//<div>
+//<p>Could not find this Pokemon 😟. Try again.</p>
+//</div>`;
+//	    console.log("Pokemon not found",err);
 	});
+});
+});
 	e.preventDefault();
-}
+};
