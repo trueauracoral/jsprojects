@@ -1,4 +1,4 @@
-//Tutorial project created with help from  https://invidio.xamh.de/watch?v=zOrejGF0oBA
+//Some code created with help from  https://invidio.xamh.de/watch?v=zOrejGF0oBA
 document.querySelector('#search').addEventListener("click",getPokemon);
 
 function capitalizeFirstLetter(string){
@@ -44,14 +44,15 @@ function getPokemon(e) {
 			<p>${evolvetext}</p>
 		</div>
 		`;
-	//.catch((err) => {
-	//	document.querySelector(".pokemonBox").innerHTML = `
-//<div>
-//<p>Could not find this Pokemon 😟. Try again.</p>
-//</div>`;
-//	    console.log("Pokemon not found",err);
 	});
-});
-});
+	});
+	})
+	.catch((err) => {
+		document.querySelector(".pokemonBox").innerHTML = `
+<div>
+<p>Could not find this Pokemon 😟. Try again.</p>
+</div>`;
+	    console.log("Pokemon not found",err);
+	});
 	e.preventDefault();
-};
+}
