@@ -1,4 +1,3 @@
-//Some code created with help from  https://invidio.xamh.de/watch?v=zOrejGF0oBA
 document.querySelector('#search').addEventListener("click",getPokemon);
 
 function capitalizeFirstLetter(string){
@@ -33,9 +32,8 @@ function getPokemon(e) {
 				evolvetext = capitalizeFirstLetter(name)+" does not evolve";
 			}
 		document.querySelector(".pokemonBox").innerHTML = `
-		<div>
-		<img src="${data.sprites.other["official-artwork"].front_default}" alt="${data.name}"/>
-		</div>
+		<img style='vertical-align:middle;' src="${data.sprites.other["official-artwork"].front_default}" alt="${data.name}"/>
+		<div style='vertical-align:middle; display:inline-block;'class="pokemonInfo">
 		<div class="pokemonInfo">
 			<h1>${capitalizeFirstLetter(data.name)}</h1>
 			<p><b>Type:</b> ${typetext}</p>
