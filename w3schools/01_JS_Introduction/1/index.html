@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+TAG NOTES:
+<!DOCTYPE> is an abreviation for document type and describes what is this document. In this case it is a HTML document.
+<html> is the root of an html document. This is what the browser is looking for when reading.
+<body> It containes all HTML elements.
+<h1>, <h2>, <h3>, <h4> are tags which make headers in the HTML document
+<p> is a tag for making a paragraph with text. The more <p> tags you add you will see an enter between your last paragraph and new one.
+<button> is a tag for creating buttons in html. Buttons like a lot of other tags in html can be accessed by javascript
+-->
+<html>
+<body>
+
+<h2>Changing HTML Content with javascript getElementById.innerHTML function</h2>
+
+<!-- Assigning a id to the paragraph -->
+<p id="demo">JavaScript can change HTML content.</p>
+
+<!-- Changing the paragraph with id "demo" to different stuff -->
+<button type="button" onclick='document.getElementById("demo").innerHTML="Hello JavaScript!"'>Click Me!</button>
+
+</body>
+</html>

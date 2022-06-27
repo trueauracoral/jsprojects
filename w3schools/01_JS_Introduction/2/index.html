@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+TAG NOTES:
+<img> tag is a tag in html for images and other media.
+-->
+<html>
+<body>
+
+<h2>Changing HTML attribute values with JavaScript.</h2>
+
+<p>In this example we will change the src (location of the image value) with javascript.</p>
+
+<!-- for some reason in there example they don't use type="button" anymore
+we learn here that getElementByID function can be given .src for the src html attribute in the image tag -->
+<button onclick='document.getElementById("my_image").src="pic_bulbon.gif"'>Turn on the LIGHT!</button>
+
+<!-- The style image html attribute uses css -->
+<img id="my_image" src="pic_bulboff.gif" style="width:100px">
+
+<button onclick='document.getElementById("my_image").src="pic_bulboff.gif"'>Turn OFF the light.</button>
+
+</body>
+</html>
