@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Using the Replace Function in javascript</h2>
+
+<button onclick="myFunction()">Try it!</button>
+
+<p id="demo">Test Text</p>
+
+<script>
+function myFunction() {
+    let text = document.getElementById("demo").innerHTML;
+    /* The /i flag is a part of regular expressions and is making it so that it's case insensitive */
+    document.getElementById("demo").innerHTML = text.replace("/MICROSOFT/i","W3Schools");
+    /* The /g flag is a part of regular expressions and is making it so that it's global match */
+    document.getElementById("demo").innerHTML = text.replace("/MICROSOFT/g","W3Schools");
+}
+</script>
+
+</p>
+</body>
+</html>
