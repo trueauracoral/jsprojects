@@ -9,7 +9,7 @@ function title(stuff) {
 const board = "vp";
 boardButtons()
 function boardButtons() {
-    fetch(`https://cors-anywhere.herokuapp.com/http://a.4cdn.org/boards.json`, {
+    fetch(`https://api.allorigins.win/get?url=https://a.4cdn.org/boards.json`, {
         method: "GET",
         headers: {
             'Accept': 'application/json',
@@ -17,7 +17,8 @@ function boardButtons() {
     })
     .then((response) => response.json())
     .then((data) => {
-        let list = `<p>[`
+        data = JSON.parse(data.contents)
+        let list = `<p>[ `
         data.boards.forEach(function (result) {
             list += `<a onclick="getBoard('${result.board}')" href="#">${result.board}</a> `
         })
@@ -32,7 +33,7 @@ function boardButtons() {
     });
 }
 function getBoard(board) {
-    fetch(`https://cors-anywhere.herokuapp.com/http://a.4cdn.org/${board}/catalog.json`, {
+    fetch(`https://api.allorigins.win/get?url=https://a.4cdn.org/${board}/catalog.json`, {
         method: "GET",
         headers: {
             'Accept': 'application/json',
@@ -40,6 +41,7 @@ function getBoard(board) {
     })
         .then((response) => response.json())
         .then((data) => {
+            data = JSON.parse(data.contents)
             let list = `
 
 	`;
@@ -48,10 +50,15 @@ function getBoard(board) {
 	<hr>
 	<div class="Thread" style='vertical-align:middle; display:inline-block;'>
     <p style="color:#ADADAD">${title(result)}</p>
-	<img src="https://i.4cdn.org/${board}/${result.tim}${result.ext}" alt="${result.no}" style='vertical-align:middle;'/>
-    <p>${result.com}</p>
-	</div>
-	`;
+    `
+                if (result.images != 0) {
+                    list += `
+                    <img src="https://i.4cdn.org/${board}/${result.tim}${result.ext}" alt="${result.no}" style='vertical-align:middle;'/>`
+                }
+                list += `
+                <p>${result.com}</p>
+                </div>
+                `;
                 if (result.replies != 0) {
                     result.last_replies.forEach(function (reply) {
                         list += `
@@ -60,7 +67,7 @@ function getBoard(board) {
                 `;
                         if (reply.hasOwnProperty("filename")) {
                             list += `
-	<img style='vertical-align:middle;' src="https://i.4cdn.org/${board}/${reply.tim}${reply.ext}" alt="${result.no}"/>
+	<img style='vertical-align:middle;' src="http://i.4cdn.org/${board}/${reply.tim}s${reply.ext}" alt="${result.no}"/>
 	`;
                         }
                         if (reply.hasOwnProperty("com")) {
