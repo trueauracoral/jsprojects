@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript While Loop</h2>
+
+<p id="demo"></p>
+
+<script>
+// Creating two variables here text a string and i a integer
+let text = "";
+let i = 0;
+// The code will loop until a condition is met. This is what while loops do.
+// In this case when i is less than 10
+while (i < 10) {
+  text += "<br>The number is " + i;
+  // ++ is incrementing the value of i so 1 -> 2 -> 3 etc
+  i++;
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>

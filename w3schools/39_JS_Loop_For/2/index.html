@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript For Of Loop</h2>
+<p>The for of statement loops through the values of any iterable object:</p>
+
+<p id="demo"></p>
+
+<script>
+// This is a json array
+const cars = ["BMW", "Volvo", "Mini"];
+
+// This is an empty variable which we will append strings to
+let text = "";
+// for (x) a name for each item in the array of the array (cars) we add the string <br> and the name
+for (let x of cars) {
+  text += x + "<br>";
+}
+
+// we set the paragraph demo to the variable we messed with text
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>
