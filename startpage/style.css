@@ -20,6 +20,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	gap: 50px;
 }
 
 h1, h2 {
@@ -33,6 +34,6 @@ body {
 }
 
 a {
-	color: #4153dd;
+	color: #e47023;
 	text-align: center;
 }
