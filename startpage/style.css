@@ -1,18 +1,22 @@
-.image {
-	float:left;
+.weather {
+	float: right;
+}
+
+.cols {
+	display: flex;
 }
 
 .info {
 	color: #CECECE;
 }
 
-.weather {
-	float:right;
-}
-
 h1 {
 	text-align: center;
 	color: #CECECE;
+}
+
+h2 {
+
 }
 
 body {
