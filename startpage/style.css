@@ -10,13 +10,13 @@
 	color: #CECECE;
 }
 
-h1 {
-	text-align: center;
-	color: #CECECE;
+.links {
+	display: flex;
 }
 
-h2 {
-
+h1, h2 {
+	text-align: center;
+	color: #CECECE;
 }
 
 body {
