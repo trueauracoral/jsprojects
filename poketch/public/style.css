@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+#poketch-container {
+  position: relative;
+  height: 100vh;
+}
+
+#watch-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 512px;
+  height: auto;
+}
+
+#watch-face {
+  width: 100%;
+  height: auto;
+}
+
+#content-container {
+  position: absolute;
+  top: 8%;
+  left: 6%;
+  width: 75%; /* Adjust as needed */
+  height: 83%; /* Adjust as needed */
+  overflow: auto;
+  /*border: 2px solid red;*/
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background-size: cover;
+}
+
+#time-container {
+  transform: scale(2.1);
+  padding: 0;
+  margin: 0;
+  top: 114px;
+  left: 104px;
+  position: absolute;
+}
+
+#buttons-container {
+  position: absolute;
+  top: 65px;
+  right: 3px; /* Adjust as needed to move the container slightly to the left */
+  display: flex;
+  flex-direction: column;
+}
+
+#button1, #button2 {
+  width: 64px;
+  height: 126px;
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 0px;
+  border: none;
+  position: relative;
+  overflow: hidden; /* Ensure no overflow */
+}
+
+#count-button {
+  background-color: transparent;
+  position: absolute;
+  background-image: url("images/count-button.png");
+  background-size: cover; /* Adjust as needed */
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none; /* Remove border if not needed */
+  cursor: pointer;
+  left: 33%;
+  top: 60%;
+  width: 128px;
+  height: 112px;
+}
+
+.button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Make sure the image covers the entire img element */
+  display: block;
+}
+
+#image-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+#pressed-image {
+  width: 64px; /* Adjust the width as needed */
+  height: 126px; /* Adjust the height as needed */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#button2 {
+  background-image: url('images/poketch_top_button.png'); /* Set the background image for the forward button */
+  background-size: cover;
+}
+
+#button1 {
+  background-image: url('images/poketch_bottom_button.png'); /* Set the background image for the backward button */
+  background-size: cover;
+}
+
+
+#clock-container {
+  position: relative;
+  margin: auto;
+  height: 40vw;
+  /*to make the height and width responsive*/
+  width: 40vw;
+  background: url() no-repeat;
+  /*setting our background image*/
+  background-size: 100%;
+}
+
+#hour,
+#minute {
+  position: absolute;
+  transform-origin: bottom;
+}
+
+#minute {
+  width: 1.6%;
+  height: 30%;
+  top: 19%;
+  left: 48.9%;
+  background-color: #395231;
+}
+
+#hour {
+  width: 5%;
+  height: 25%;
+  top: 25%;
+  left: 48.85%;
+  background-color: #528452;
+  z-index: 1;
+}
