@@ -38,15 +38,13 @@ function handleKeyPress(event) {
 
     console.log(`(${x}, ${y})`);
     if (movement) {
-        // Calculate medalNumber based on x and y
         if (x > 3) {
-            medalNumber = 12 + (y - 1) * 3 + (x - 4);
+            medalNumber = 12 + (y - 1) * 3 + (x - 3);
         } else {
             medalNumber = (y - 1) * 3 + x;
         }
         console.log(medalId);
 
-        // Remove styles from all elements with the "outlined" class
         var outlinedElements = document.getElementsByClassName("outlined");
         while (outlinedElements.length > 0) {
             outlinedElements[0].style.cssText = ""; // Clear styles
@@ -57,7 +55,6 @@ function handleKeyPress(event) {
         selectedMedal = document.getElementById(medalId);
         console.log(selectedMedal.id);
 
-        // Add styles to the selected medal if it exists
         var outlineElement = selectedMedal.getElementsByClassName("outline")[0];
         if (outlineElement) {
             outlineElement.classList.add("outlined");
