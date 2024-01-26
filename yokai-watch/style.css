@@ -1,0 +1,130 @@
+body {
+  background: #6e28d9;
+  padding: 0 24px;
+}
+
+/* Medal CSS */
+#triangle {
+  z-index: 5;
+  position: relative;
+  width: 0;
+  height: 0;
+  top: 0px;
+  left: 80px;
+  transform: rotate(45deg);
+  border: 12px solid transparent;
+  border-top: 0;
+  border-bottom: 24px solid #212128;
+  box-shadow: inset black 0px 0px 4px -12px;
+}
+
+.medal-container {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  margin-right: 10px; /* Add space between medal holders */
+  margin-bottom: 10px;
+}
+#circle {
+  z-index: 5;
+  height: 100px;
+  width: 100px;
+  background-color: #26262f;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: inset black 0px 0px 25px -12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Common styles for numerals */
+div[id*="text"] {
+  position: relative;
+  z-index: 6;
+  content: attr(data-number);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff; /* Text color */
+  font-size: 5em; /* Adjust font size as needed */
+  font-weight: bold;
+}
+
+/* Styles for individual numerals */
+#text-1::before { content: "1"; }
+#text-2::before { content: "2"; }
+#text-3::before { content: "3"; }
+#text-4::before { content: "4"; }
+#text-5::before { content: "5"; }
+#text-6::before { content: "6"; }
+#text-7::before { content: "7"; }
+#text-8::before { content: "8"; }
+#text-9::before { content: "9"; }
+#text-10::before { content: "10"; }
+#text-11::before { content: "11"; }
+#text-12::before { content: "12"; }
+
+.medal-container .outlined {
+  position: absolute;
+  z-index: 7;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  border: 3px dashed yellow;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transform: scale(1.8);
+  animation: spin 3s infinite linear;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Binder CSS */
+#binder {
+  background: #3c3c4d;
+  border-right: 10px solid #161616; /* Adjusted border size */
+  border-left: 10px solid #161616;
+  border-top: 7px solid #161616;
+  border-bottom: 7px solid #161616;
+  border-radius: 15px; /* Adjusted border-radius */
+  padding: 10px; /* Adjusted padding */
+  padding-bottom: 0em;
+  width: fit-content;
+}
+
+#left,
+#right {
+  display: inline-block; /* Display tables inline */
+  vertical-align: top; /* Align tables to the top */
+}
+
+#right {
+  margin-left: 70px; /* Add space between left and right tables */
+}
+
+.page-number {
+  font-size: 1.5em;
+  display: inline;
+  font-weight: bold;
+}
+
+#page-number-l {
+  position: relative;
+  left: 10px;
+  bottom: 0px;
+  color: #606786;
+}
+
+#page-number-r {
+  position: relative;
+  float: right;
+  right: 10px;
+  bottom: 0px;
+  color: #606786;
+}
