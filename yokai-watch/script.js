@@ -5,6 +5,8 @@ let y = 1;
 let medalNumber = 1;
 let medalId = `medal-${medalNumber}`;
 let selectedMedal = document.getElementById(medalId);
+let page = 1;
+let pages = 20;
 
 function handleKeyPress(event) {
     console.log(medalId);
@@ -26,23 +28,68 @@ function handleKeyPress(event) {
             movement = true;
             if (!((x - 1) < 1)) {
                 x -= 1;
+            } else {
+                if (((page) > 1)) {
+                    page--;
+                    paginate(page, "left");
+                    x = 6;
+                    // I assume now given page number I must put the associated yo-kai
+                } 
             }
             break;
         case 'ArrowRight':
             movement = true;
             if (!((x + 1) > 6)) {
                 x += 1;
+            } else {
+                console.log(page);
+                console.log(pages);
+                if (((page + 1) < pages)) {
+                    page++;
+                    paginate(page, "right");
+                    x = 1;
+                    // I assume now given page number I must put the associated yo-kai
+                }
             }
             break;
     }
+    function paginate(page, direction) {
+        if (direction == "left") {
+            move = -12;
+        } else if (direction == "right") {
+            move = 12;
+        }
 
+        // Apperently this is a new feature so it isn't supported in older browsers
+        // https://developer.mozilla.org/en-US/docs/Web/API/Element/animate
+        const binderMove = [
+            { transform: `translateX(${move}px)` },
+            { transform: "translateX(0px)" },
+          ];
+          
+        const binderTiming = {
+            duration: 75,
+            iterations: 1,
+        };
+          
+        const binder = document.querySelector("#binder");
+          
+        binder.animate(binderMove, binderTiming);
+          
+        document.getElementById("page-number-l").innerHTML = zfill(page);
+        document.getElementById("page-number-r").innerHTML = zfill(page+1);
+    }
+    function zfill(number) {
+        return number.toString().padStart(2, '0');
+    }
     console.log(`(${x}, ${y})`);
     if (movement) {
         if (x > 3) {
             medalNumber = 12 + (y - 1) * 3 + (x - 3);
-        } else {
+        } else if (x <= 3) {
             medalNumber = (y - 1) * 3 + x;
         }
+
         console.log(medalId);
 
         var outlinedElements = document.getElementsByClassName("outlined");

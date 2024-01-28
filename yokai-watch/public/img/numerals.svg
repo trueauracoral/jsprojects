@@ -15,7 +15,25 @@
    inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
    sodipodi:docname="numerals.svg">
   <defs
-     id="defs2" />
+     id="defs2">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect845"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,4.9136906,0,1 @ F,0,0,1,0,3.7797617,0,1 @ F,0,0,1,0,6.6145833,0,1 @ F,0,0,1,0,5.858631,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="0"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -24,16 +42,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="376.17563"
+     inkscape:cx="375.81849"
      inkscape:cy="352.73186"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="1755"
-     inkscape:window-height="1228"
-     inkscape:window-x="129"
-     inkscape:window-y="301"
+     inkscape:window-width="1058"
+     inkscape:window-height="591"
+     inkscape:window-x="-10"
+     inkscape:window-y="0"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata5">
@@ -51,12 +69,21 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       style="fill:#d1e0e1;fill-opacity:1;stroke:#416671;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect835"
-       width="12.095239"
-       height="39.309525"
-       x="63.122025"
-       y="45.35714" />
+    <path
+       style="fill:#d1e0e1;fill-opacity:1;stroke:#416671;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect843"
+       width="12.473214"
+       height="46.113098"
+       x="45.357143"
+       y="47.813984"
+       inkscape:path-effect="#path-effect845"
+       d="m 50.270834,47.813984 h 3.779762 a 3.7797617,3.7797617 45 0 1 3.779762,3.779762 v 35.718753 a 6.6145833,6.6145833 135 0 1 -6.614584,6.614583 5.8586309,5.8586309 45.000001 0 1 -5.858631,-5.858631 V 52.727675 a 4.9136906,4.9136906 135 0 1 4.913691,-4.913691 z"
+       sodipodi:type="rect" />
+    <circle
+       style="fill:#d1e0e1;fill-opacity:1;stroke:#416671;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path847"
+       cx="37.608631"
+       cy="53.861607"
+       r="6.2366071" />
   </g>
 </svg>
